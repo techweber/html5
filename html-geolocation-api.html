@@ -1,0 +1,23 @@
+<h1 id="demo">Location will appear here</h1>
+<script>
+	function getLocation(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+		}
+	}
+
+	function showPosition(position){
+		console.log(position);
+		document.getElementById("demo").innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+
+		var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+		window.open('https://www.google.com/maps/@' + latlon);
+
+	}
+
+	getLocation();
+
+</script>

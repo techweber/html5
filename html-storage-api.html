@@ -1,0 +1,29 @@
+<script>
+	if(typeof(Storage)!=='undefined'){
+		console.log('Code for localStorage / sessionStorage');
+		localStorage.setItem("fullname", "John Doe");
+		console.log(localStorage.getItem("fullname"));
+		localStorage.removeItem("fullname");
+
+		// Code for localStorage / sessionStorage
+	} else {
+		// Sorry no Web Storage Support
+		console.log('Sorry no Web Storage Support');		
+	}
+
+	if (localStorage.clickcount) {
+	  localStorage.clickcount = Number(localStorage.clickcount) + 1;
+	} else {
+	  localStorage.clickcount = 1;
+	}
+	console.log(localStorage.clickcount);
+
+	if (sessionStorage.clickcount) {
+	  sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+	} else {
+	  sessionStorage.clickcount = 1;
+	}
+	console.log(sessionStorage.clickcount);
+
+
+</script>
